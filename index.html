@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://unpkg.com/tesseract.js@v2.0.2/dist/tesseract.min.js'></script>
+    <script src="http://nerdamer.com/js/nerdamer.core.js"></script>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Calibri;
+        flex-direction: column;
+        margin: 0 0 0 0;
+    }
+    .btn {
+        padding: 5px;
+        color: aqua;
+        background-color: black; 
+        border: none;   
+    }
+    h2 {
+        color: blue;
+    }
+    #header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: lightblue;
+        margin: 0;
+        padding: 0;
+    }
+    #header > h1 {
+        color: blue;
+    }
+</style>
+<body>
+    <div id="header">
+        <h1>Math<i>Gen</i></h1>
+    </div>
+    <div class="search">
+        <img id="output" src="" width="200" height="150"/>
+        <form class="form" id="myForm">
+            <input type="file" id="inpFile" onchange="loadFile(event)">
+            <button class="btn" type="submit">Upload File</button>
+       </form>
+       <button class="btn" onclick="detect();">Recognize</button>
+       <button class="btn" onclick="calc();">Calculate</button>
+    </div>
+    <div style="text-align: center;">
+        <h1><b>Equation</b></h1>
+        <h2 id="Result"></h2>
+        <h1><b>Result</b></h1>
+        <h2 id="text"></h2>
+    </div>
+    <script src="Files/file.js"></script>
+    <!--<script>
+        function detect() {
+        Tesseract.recognize(
+            'https://tesseract.projectnaptha.com/img/eng_bw.png',
+            'eng',
+            { logger: m => console.log(m) }
+        ).then(({ data: { text } }) => {
+            alert(text);
+        })
+    }
+    </script>-->
+</body>
+
+</html>
